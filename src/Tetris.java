@@ -51,18 +51,12 @@ TMR = tetris.new Thimer();
         figureOld = new Figure();
 
         poleF.go();
-       // Menu.HighScore HS = poleF.menu.highScore;   //new Player("Nic",new Date().getTime(),500);
-      //  HS.HighScoreArray.add(poleF.menu.new Player("Nic",new Date(),500));
-       // HS.HighScoreArray.add(poleF.menu.new Player("Fich",new Date(),800));
-       // HS.HighScoreArray.add(poleF.menu.new Player("Bill",new Date(),500));
-
         poleF.myGamePanel.setFocusable(true);
         poleF.myGamePanel.setSize(251,530);
-       // figure = FG.createRandomFigure(5, 0);
-       // poleF.myGamePanel.paintComponent(poleF.myGamePanel.getGraphics());
-
+       
         poleF.myGamePanel.addKeyListener(KU);
         poleF.menu.EnterPName();
+        poleF.menu.highScore= poleF.menu.XML(false,poleF.menu.highScore);
 
        TMR.run();
 

@@ -27,14 +27,12 @@ public class FramePole {
 
     public void go()                                        //Рисуем главный фрэйм
     {
-        frame.setSize(370,529);
+        frame.setSize(370,531);
         menu.setBounds(252,0,120,528);
         myGamePanel.setBounds(0,0,250,528);
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-       // frame.getContentPane().add(BorderLayout.CENTER,myGamePanel);
-       // frame.getContentPane().add(BorderLayout.EAST,menu);
         frame.getContentPane().add(menu);
         frame.getContentPane().add(myGamePanel);
         // frame.pack();

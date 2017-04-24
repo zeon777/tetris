@@ -49,7 +49,7 @@ public class Menu extends JPanel {
 
 
    public void StartMetod() {
-        //this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+
         this.setLayout( new GridLayout(6,1));
 
         highScore = new HighScore();
@@ -95,7 +95,7 @@ public class Menu extends JPanel {
         button.addActionListener(new ButtonSaveNameListener());
 
 
-        enterName.setBounds(0,0,150,100);
+        enterName.setBounds(0,0,150,130);
         enterName.setDefaultCloseOperation(HelpFrame.DISPOSE_ON_CLOSE);
 
         enterName.setLocationRelativeTo(null);
@@ -227,10 +227,6 @@ public class Menu extends JPanel {
         highScore= XML(false,highScore);
         highScore.HighScoreArray.sort(Player::compareTo);
 
-        System.out.println(highScore.getHighScoreArray().size());
-
-
-
         if(HighScoresFrame ==null)
             HighScoresFrame = new JFrame("HighScores");
         else
@@ -279,9 +275,9 @@ public class Menu extends JPanel {
     @XmlRootElement
     @XmlType(name = "highScore")
     @XmlAccessorType(XmlAccessType.FIELD)
-   static class HighScore                   //!!!!!!!Класс с таблицой результатов содержит класc строки результата Player
+   static class HighScore                   //Класс с таблицой результатов содержит класc строки результата Player
     {
-        //@XmlElementWrapper(name="playersArray", nillable = true)
+
         public List<Player> HighScoreArray;
 
 
