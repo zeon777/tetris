@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<highScore>
+    <HighScoreArray>
+        <name>dan</name>
+        <dateOfGame>2017-04-20T19:09:50.373+03:00</dateOfGame>
+        <score>300</score>
+    </HighScoreArray>
+    <HighScoreArray>
+        <name>mrZ</name>
+        <dateOfGame>2017-04-20T19:12:51.565+03:00</dateOfGame>
+        <score>300</score>
+    </HighScoreArray>
+    <HighScoreArray>
+        <name>vasya</name>
+        <dateOfGame>2017-04-20T18:55:59.669+03:00</dateOfGame>
+        <score>100</score>
+    </HighScoreArray>
+    <HighScoreArray>
+        <name>vasya</name>
+        <dateOfGame>2017-04-20T18:56:26.535+03:00</dateOfGame>
+        <score>100</score>
+    </HighScoreArray>
+    <HighScoreArray>
+        <name>dan</name>
+        <dateOfGame>2017-04-20T19:08:18.300+03:00</dateOfGame>
+        <score>100</score>
+    </HighScoreArray>
+</highScore>
