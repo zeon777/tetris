@@ -15,7 +15,8 @@ static boolean conTinue = false;
     static FigureGenerator FG = new FigureGenerator();
     static int score;
     static KeyUlovitel KU;
-    static Thimer TMR;
+   static Thimer TMR;
+
 
    public static void PrizIProv()                                           // Вызов проверки полний, смещение поля и создание новой фигуры
    {
@@ -53,12 +54,16 @@ TMR = tetris.new Thimer();
         poleF.go();
         poleF.myGamePanel.setFocusable(true);
         poleF.myGamePanel.setSize(251,530);
-       
+
         poleF.myGamePanel.addKeyListener(KU);
         poleF.menu.EnterPName();
         poleF.menu.highScore= poleF.menu.XML(false,poleF.menu.highScore);
 
-       TMR.run();
+
+       Runnable runnable = TMR;
+       Thread thread = new Thread(runnable);
+       thread.isDaemon();
+       thread.start();
 
     }
 
@@ -78,10 +83,7 @@ TMR = tetris.new Thimer();
                   case 's':{figure.down();
                       poleF.myGamePanel.paintFigure(poleF.myGamePanel.getGraphics(), figure,figureOld); };  break; //147
                 case 'w':{figure.rotate();poleF.myGamePanel.paintFigure(poleF.myGamePanel.getGraphics(),figure,figureOld);
-
-
-
-                }  break; //64
+                }   //64
             }
         }
 
@@ -94,35 +96,34 @@ TMR = tetris.new Thimer();
         }
     }
 
-    public class Thimer implements Runnable
-    {
+    public class Thimer implements Runnable {
         int thimeout = 500;
 
         int count = 400;
+
         @Override
         public void run() {
 
-            while (true)
-            {
-                if(conTinue) {
+            while (true) {
+                if (conTinue) {
                     poleF.myGamePanel.setFocusable(true);
 
                     figureOld.setFigure(figure.getFigure().clone());
                     figureOld.Ypos = figure.getYpos();
                     figureOld.Xpos = figure.getXpos();
                     figure.down();
-                    poleF.myGamePanel.paintFigure(poleF.myGamePanel.getGraphics(), figure,figureOld);
+                    poleF.myGamePanel.paintFigure(poleF.myGamePanel.getGraphics(), figure, figureOld);
 
                     count++;
                 }
 
-                if(TMR.count == 600 || TMR.count == 800 || TMR.count == 1100)
-                 TMR.thimeout = (int) (TMR.thimeout*1.8f/(TMR.count/300));
+                if (TMR.count == 600 || TMR.count == 800 || TMR.count == 1100)
+                    TMR.thimeout = (int) (TMR.thimeout * 1.8f / (TMR.count / 300));
 
                 try {
                     Thread.sleep(thimeout);
 
-                   // System.out.println(count + " "+ thimeout);
+                    // System.out.println(count + " "+ thimeout);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -131,5 +132,6 @@ TMR = tetris.new Thimer();
 
         }
     }
+
 
 }

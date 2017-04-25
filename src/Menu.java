@@ -1,10 +1,7 @@
-import sun.plugin.javascript.navig.Link;
-
 import javax.swing.*;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.*;
@@ -125,6 +122,7 @@ public class Menu extends JPanel {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
+
     }
     class ButtonStartListener implements ActionListener      //отслеживание нажатия Кнопки Start
     {
